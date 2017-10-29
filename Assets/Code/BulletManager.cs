@@ -24,13 +24,10 @@ namespace Assets.Code
         }
 
         // TODO fill me in
-        public void ForceSpawn (Vector2 pos, Quaternion rotation, Vector2 velocity, float deathtime) {
+        public void ForceSpawn (Vector2 pos, Quaternion rotation, Vector2 velocity, float deathtime, int color) {
             //Object.Instantiate(_bullet, pos, rotation, _holder);
-            //GameObject _holder = (GameObject)Object.Instantiate(_bullet, pos, rotation);
-            //_holder.GetComponent<Bullet>().Initialize(velocity, deathtime);
-            
-            var newBullet = (GameObject) Object.Instantiate(_bullet, pos, rotation,_holder);
-            newBullet.GetComponent<Bullet>().Initialize(velocity,deathtime);
+            GameObject _holder = (GameObject)Object.Instantiate(_bullet, pos, rotation);
+            _holder.GetComponent<Bullet>().Initialize(velocity, deathtime, color);
         }
 
         #region saveload

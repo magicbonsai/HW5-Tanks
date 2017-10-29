@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Code
 {
@@ -26,19 +24,19 @@ namespace Assets.Code
         /// </summary>
         /// <returns>What platform we're running on</returns>
         public static PlatformType GetPlatform () {
-            if (Application.platform == RuntimePlatform.WindowsPlayer)
+            if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
             {
-                Console.Write("windows player");
+                Debug.Log(string.Format("windows player"));
                 return PlatformType.Windows;
             }
-            else if(Application.platform == RuntimePlatform.OSXPlayer)
+            else if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor) 
             {
-                Console.Write("mac player");
+                Debug.Log(string.Format("mac player"));
                 return PlatformType.Mac;
             }
             else
             {
-                Console.Write("linux player");
+                Debug.Log(string.Format("linux player"));
                 return PlatformType.Linux;
             }
         }

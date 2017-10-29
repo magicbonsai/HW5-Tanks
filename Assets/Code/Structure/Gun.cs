@@ -14,13 +14,13 @@ namespace Assets.Code.Structure
         public void Fire () {
             float time = Time.time;
             if (time < _lastfire + FireCooldown) { return; }
-
+           
             _lastfire = time;
             Game.Bullets.ForceSpawn(
-                transform.position + transform.up * 0.7f,
+                transform.position + transform.up * 1.1f,
                 transform.rotation,
                 transform.up * 4f,
-                time + Bullet.Lifetime);
+                time + Bullet.Lifetime, 1);
         }
     }
 }

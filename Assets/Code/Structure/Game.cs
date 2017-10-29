@@ -18,6 +18,7 @@ namespace Assets.Code.Structure
         // 
         // all of the things that we can about saving/loading
         public static ScoreManager Score;
+        public static ScoreManager1 Score1;
         public static Player Player;
         public static BulletManager Bullets;
 
@@ -25,6 +26,7 @@ namespace Assets.Code.Structure
         internal void Start () {
             Ctx = this;
             Score = GameObject.Find("ScoreText").GetComponent<ScoreManager>();
+            Score1 = GameObject.Find("ScoreText1").GetComponent<ScoreManager1>();
             Player = GameObject.Find("Player").GetComponent<Player>();
            
             Bullets = new BulletManager(GameObject.Find("Bullets").transform);
