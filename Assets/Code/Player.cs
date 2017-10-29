@@ -55,7 +55,7 @@ namespace Assets.Code
             // TODO fill me in
             Turn(Input.GetAxis("Horizontal"));
             Thrust(Input.GetAxis("Vertical"));
-            if (Mathf.Abs(Input.GetAxis(_fireaxis)) > 0){
+            if (Input.GetAxis(_fireaxis) == 1){
                 Debug.Log(string.Format("Fired"));
                 Fire();
             }
